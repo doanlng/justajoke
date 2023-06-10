@@ -1,0 +1,13 @@
+.popupContent{
+    font-size: small;
+}
+
+.explain{
+    color: rgba(255, 255, 255, 0.24);
+    font-size: 20px;
+}
+
+.explain:hover{
+    color: rgba(255, 255, 255, 0.89);
+    cursor: pointer;
+}

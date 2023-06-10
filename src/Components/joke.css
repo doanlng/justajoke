@@ -1,0 +1,11 @@
+.arrow {
+    display: inline-block;
+    margin-right: 20px;
+    /* Adjust the margin as needed */
+    cursor: pointer;
+}
+
+.punchline {
+    margin-left: 10px;
+    /* Adjust the margin as needed */
+}

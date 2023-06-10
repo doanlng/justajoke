@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { useState } from "react";
+import Button from "./Components/Button";
+import Joke from "./Components/Joke";
+import Popup from "./Components/Popup";
+import { ApolloProvider } from "react-apollo";
+import Client from "./ApolloClient/Client";
 function App() {
+  const [j, renderJoke] = useState(false);
+
+  const showJoke = () => {
+    console.log(j);
+    renderJoke(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={Client}>
+      <div className="App">
+        <header className="App-header">
+          <div className="grid-item"></div>
+          <div className="grid-item"></div>
+          <div className="grid-item"></div>
+          <div className="grid-item"></div>
+          <div className="grid-item">
+            {j && <Joke />}
+            <span className="b" onClick={showJoke}>
+              <Button />
+            </span>{" "}
+          </div>
+          <div className="grid-item"></div>
+          <div className="grid-item"></div>
+          <div className="grid-item"></div>
+          <div className="grid-item">
+            <Popup className="popup" />
+          </div>
+        </header>
+      </div>
+    </ApolloProvider>
   );
 }
 

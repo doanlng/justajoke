@@ -16,7 +16,9 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -24,8 +26,25 @@
   color: white;
 }
 
+.grid-item2{
+  justify-content: baseline;
+}
+.b{
+    height: 25%;
+    width: 70%;
+}
+.b{
+    height: 25%;
+    width: 70%;
+}
 .App-link {
   color: #61dafb;
+}
+
+.popup{
+  align-items: right;
+  bottom: 20px;
+  right: 20px;
 }
 
 @keyframes App-logo-spin {
