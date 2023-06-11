@@ -8,3 +8,5 @@ class joke (models.Model):
     date_submitted= models.DateTimeField(default=None)
     verified = models.BooleanField(default=False)
 
+class proceed (models.Model):
+    text = models.CharField(max_length=400)
