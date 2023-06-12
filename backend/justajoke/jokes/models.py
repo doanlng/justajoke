@@ -9,4 +9,5 @@ class joke (models.Model):
     verified = models.BooleanField(default=False)
 
 class proceed (models.Model):
+    id = models.AutoField(primary_key=True)
     text = models.CharField(max_length=400)

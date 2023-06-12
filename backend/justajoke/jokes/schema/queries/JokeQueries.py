@@ -10,6 +10,7 @@ class JokeQueries:
     random_verified_jokes = List(
         JokeType, num_jokes=graphene.Int(default_value=10))
     number_jokes = graphene.Int()
+    joke_by_id = graphene.Field(JokeType, id=graphene.Int(required=True))
 
     def resolve_jokes(self, info):
         return joke.objects.all()
@@ -25,3 +26,6 @@ class JokeQueries:
     #get 10 random verified jokes
     def resolve_random_verified_jokes(self, info, num_jokes=3):
         return list(joke.objects.filter(verified=True).order_by('?')[:num_jokes])
+    #get joke by id
+    def resolve_joke_by_id(self, info, id):
+        return joke.objects.get(pk=id)
